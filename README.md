@@ -2,7 +2,7 @@
 
 # 🖥️View web site
 
-https://yumi-kim-0827.github.io/en_tourinkorea
+https://yumi-kim-0827.github.io/simpletodo/
 
 # ✏️Technologies Used
 
