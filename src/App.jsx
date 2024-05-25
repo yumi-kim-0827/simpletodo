@@ -17,6 +17,8 @@ const reducer = (todoList, action) => {
 };
 
 function App() {
+  const [myName, setMyName] = useState("이름을 적어주세요");
+  const [nameVisible, setNameVisible] = useState(false);
   const [todoList, dispatch] = useReducer(reducer, []);
   const [input, setInput] = useState(""); //new todo
   const [updateInput, setUpdateInput] = useState("");
@@ -36,13 +38,15 @@ function App() {
   };
   //update
   const onUpdateHandler = (id) => {
-    dispatch({
-      type: "UPDATE",
-      data: {
-        id,
-        content: updateInput,
-      },
-    });
+    if (updateInput.length > 0) {
+      dispatch({
+        type: "UPDATE",
+        data: {
+          id,
+          content: updateInput,
+        },
+      });
+    }
     setInput("");
   };
   //delete
@@ -54,6 +58,18 @@ function App() {
       },
     });
     setInput("");
+  };
+
+  const handleNameVisible = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setNameVisible(!nameVisible);
+  };
+
+  const activeEnter = (e) => {
+    if (e.key === "Enter") {
+      setNameVisible(!nameVisible);
+    }
   };
 
   return (
@@ -75,7 +91,19 @@ function App() {
       <div className="ym_todo_area">
         <div className="todo_head">
           <div className="head_left">
-            <h2>이름을 입력하세요</h2>
+            {nameVisible ? (
+              <input
+                type="text"
+                value={myName}
+                placeholder="이름을 적어주세요."
+                onChange={(e) => {
+                  setMyName(e.target.value);
+                }}
+                onKeyDown={activeEnter}
+              />
+            ) : (
+              <h2 onClick={handleNameVisible}>{myName}</h2>
+            )}
           </div>
           <div className="head_right">
             <span>{new Date().toLocaleDateString()}</span>
@@ -89,6 +117,11 @@ function App() {
               placeholder="하고싶은 일을 적어주세요."
               onChange={(e) => {
                 setInput(e.target.value);
+              }}
+              onKeyDown={(e) => {
+                if (e.key === "Enter") {
+                  onCreateHandler();
+                }
               }}
             />
             <Button text={"추가"} type={"btntype3"} onClick={onCreateHandler} />
@@ -105,6 +138,14 @@ function App() {
                         value={updateInput}
                         onChange={(e) => {
                           setUpdateInput(e.target.value);
+                        }}
+                        onKeyDown={(e) => {
+                          if (e.key === "Enter") {
+                            setUpdateId(item.id);
+                            setUpdateVisible(!updateVisible);
+                            onUpdateHandler(item.id);
+                            setUpdateInput("");
+                          }
                         }}
                       />
                     </div>

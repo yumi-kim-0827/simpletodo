@@ -49,6 +49,9 @@
       }
       .head_left {
         justify-content: flex-end;
+        input {
+          padding: 10px;
+        }
       }
       .head_right {
         text-align: right;
