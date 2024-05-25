@@ -63,6 +63,7 @@ function App() {
   const handleNameVisible = (e) => {
     e.preventDefault();
     e.stopPropagation();
+    setMyName("");
     setNameVisible(!nameVisible);
   };
 

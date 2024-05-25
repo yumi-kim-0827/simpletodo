@@ -41,7 +41,7 @@
     .todo_head {
       display: flex;
       justify-content: space-between;
-      height: 150px;
+      height: 20%;
       div {
         flex: 1;
         display: flex;
@@ -49,6 +49,10 @@
       }
       .head_left {
         justify-content: flex-end;
+        overflow: hidden;
+        h2 {
+          font-size: 40px;
+        }
         input {
           padding: 10px;
         }
@@ -62,9 +66,10 @@
     }
     .todo_body {
       margin: 20px 0 0 0;
-      padding: 20px 0;
+      display: flex;
+      flex-direction: column;
+      height: 80%;
       border-top: 1px solid rgba(41, 41, 65, 0.301);
-
       .todo_input {
         display: flex;
         flex-direction: column;
@@ -76,6 +81,8 @@
         }
       }
       .todo_list {
+        flex: 1;
+        overflow: auto;
         .todo_item {
           padding: 10px 0;
           display: flex;
@@ -84,6 +91,7 @@
           border-bottom: 1px solid rgba(41, 41, 65, 0.301);
           p {
             flex: 1;
+            color: rgb(166, 255, 83);
           }
           .todo_item_edit {
             flex: 1;
