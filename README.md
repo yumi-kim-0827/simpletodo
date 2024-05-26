@@ -6,14 +6,12 @@
 
 https://yumi-kim-0827.github.io/simpletodo/
 
-<!--배지-->
-![MIT License][license-shield] ![Repository Size][repository-size-shield] ![Issue Closed][issue-closed-shield]
 
 <!--프로젝트 대문 이미지-->
 ![Project Title](img/project-title.png)
 
 <!--프로젝트 버튼-->
- [![Readme in English][readme-eng-shield]][readme-eng-url] [![View Demo][view-demo-shield]][view-demo-url] [![Report bug][report-bug-shield]][report-bug-url] [![Request feature][request-feature-shield]][request-feature-url]
+ [![Readme in English][readme-eng-shield]][readme-eng-url] [![View Demo][view-demo-shield]][view-demo-url] [![Report bug][report-bug-shield]]
 
 <!--목차-->
 # Table of Contents
@@ -34,10 +32,8 @@ https://yumi-kim-0827.github.io/simpletodo/
 
 # [1] About the Project
 오늘 할 일, 하고싶은 일을 추가, 수정, 삭제할 수있는 투두리스트 웹앱입니다.
+다크모드의 모던한 투두리스트 웹앱으로 모바일 등 다양한 디바이스 반응형으로 제작되었습니다.
 
-- ❗️짧은❗️ 도입부/제작 동기
-- 무슨 프로젝트인지
-- 왜 이 프로젝트를 사용해야하는지
 
 ## Features
 *강조하고 싶은 **주요 기능**이나 **차별성 있는 특징**을 적으세요.*
@@ -45,7 +41,6 @@ https://yumi-kim-0827.github.io/simpletodo/
 - 뱃지로 **언어 옵션**을 제공
 
 ## Technologies
-***언어, 프레임워크, 주요 라이브러리**를 **버전**과 함께 나열하세요.*
 - React js
 - scss
 - javascript
@@ -118,7 +113,6 @@ const API_KEY = "<Your API key>";
 
 # [7] License
 MIT 라이센스
-라이센스에 대한 정보는 [`LICENSE`][license-url]에 있습니다.
 
 
 
