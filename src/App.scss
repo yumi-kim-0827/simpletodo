@@ -78,6 +78,7 @@
         }
         input {
           padding: 10px;
+          margin-bottom: 20px;
           @include mobile {
             margin-bottom: 20px;
             height: 60px;
