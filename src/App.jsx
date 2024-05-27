@@ -67,7 +67,6 @@ function App() {
   const handleNameVisible = (e) => {
     e.preventDefault();
     e.stopPropagation();
-    setMyName("");
     setNameVisible(!nameVisible);
   };
 
@@ -97,15 +96,23 @@ function App() {
         <div className="todo_head">
           <div className="head_left">
             {nameVisible ? (
-              <input
-                type="text"
-                value={myName}
-                placeholder="이름을 적어주세요."
-                onChange={(e) => {
-                  setMyName(e.target.value);
-                }}
-                onKeyDown={activeEnter}
-              />
+              <>
+                <input
+                  type="text"
+                  value={myName}
+                  placeholder="이름을 적어주세요. (5글자 이내)"
+                  onChange={(e) => {
+                    setMyName(e.target.value);
+                  }}
+                  onKeyDown={activeEnter}
+                  maxlength="5"
+                />
+                <Button
+                  text={"확인"}
+                  type={"btntype3"}
+                  onClick={handleNameVisible}
+                />
+              </>
             ) : (
               <h2 onClick={handleNameVisible}>{myName}</h2>
             )}

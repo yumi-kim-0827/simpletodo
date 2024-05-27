@@ -1,24 +1,4 @@
-/* Responsive layout, breakpoint */
-
-$mobile-max: 767px; //모바일 ~767
-$tablet-max: 1023px; //태블릿 768 ~ 1023
-$desktop-min: 1024px; // pc 1024 ~
-
-@mixin mobile {
-  @media (max-width: $mobile-max) {
-    @content;
-  }
-}
-@mixin tablet {
-  @media (max-width: $tablet-max) and (min-width: $mobile-max) {
-    @content;
-  }
-}
-@mixin desktop {
-  @media (min-width: $desktop-min) {
-    @content;
-  }
-}
+@import "./Basic.scss";
 
 /* Button component */
 .btn {
@@ -98,12 +78,19 @@ $desktop-min: 1024px; // pc 1024 ~
         }
         input {
           padding: 10px;
+          @include mobile {
+            margin-bottom: 20px;
+            height: 60px;
+          }
         }
       }
       .head_right {
         text-align: right;
         span {
           color: #44425e;
+          @include mobile {
+            font-size: 20px;
+          }
         }
       }
     }
