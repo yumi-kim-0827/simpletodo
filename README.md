@@ -43,6 +43,7 @@ https://yumi-kim-0827.github.io/simpletodo/
 - scss
 - javascript
 
+# [2] Getting Started
 
 ## Prerequisites
 - npm
