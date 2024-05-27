@@ -126,7 +126,7 @@ const reducer = (todoList, action) => {
 
 # [4] Contribution
 버그 수정에 🐞, 아이디어 제공에 💡, 새로운 기능 구현에 ✨를 사용할 수 있습니다.*
-- 🐞 [dev-ujin](https://github.com/dev-ujin): 메인페이지 버그 수정
+- (예시) 🐞 [YUMEEKIM](https://github.com/yumi-kim-0827): 메인페이지 버그 수정
 
 
 
