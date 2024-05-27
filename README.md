@@ -8,10 +8,8 @@ https://yumi-kim-0827.github.io/simpletodo/
 
 
 <!--프로젝트 대문 이미지-->
-![Project Title](img/project-title.png)
+![screen1](https://github.com/yumi-kim-0827/simpletodo/assets/116349476/b741156e-cf27-492e-af50-4a98a950ee3b)
 
-<!--프로젝트 버튼-->
- [![Readme in English][readme-eng-shield]][readme-eng-url] [![View Demo][view-demo-shield]][view-demo-url] [![Report bug][report-bug-shield]]
 
 <!--목차-->
 # Table of Contents
@@ -36,9 +34,9 @@ https://yumi-kim-0827.github.io/simpletodo/
 
 
 ## Features
-*강조하고 싶은 **주요 기능**이나 **차별성 있는 특징**을 적으세요.*
-- 최고 멋진 **README**를 쉽게 작성할 수 있도록 *이텔릭체*로 된 **가이드**를 제공
-- 뱃지로 **언어 옵션**을 제공
+
+- pwa 환경 설정으로 모바일에서 웹앱 다운로드 설치 가능
+  
 
 ## Technologies
 - React js
@@ -47,16 +45,12 @@ https://yumi-kim-0827.github.io/simpletodo/
 
 
 ## Prerequisites
-*프로젝트를 동작시키기 위해 필요한 소프트웨어와 라이브러리를 나열하고 어떻게 다운받을 수 있는지 설명하세요.*
-
-- [OpenWeather API key](https://openweathermap.org/) (무료)
 - npm
 ```bash
 npm install npm@latest -g
 ```
 
 ## Installation
-*어떻게 이 프로젝트의 소스코드를 다운받을 수 있는지 설명하세요.*
 1. Repository 클론
 ```bash
 git clone https://github.com/your-username/project-repository
@@ -66,42 +60,78 @@ git clone https://github.com/your-username/project-repository
 npm install
 ```
 
-## Configuration
-*코드의 어느 부분을 채우거나 수정해야하는지 설명하세요.*
-- `config.js`에 Openweather API key를 입력
-```bash
-const API_KEY = "<Your API key>";
-```
-
-
 
 # [3] Usage
-***스크린샷, 코드** 등을 통해 **사용 방법**과 **사용 예제**를 보여주세요. 사용 예제별로 h2 헤더로 나누어 설명할 수 있습니다.*
 
-![usage](img/usage.png)
+useReducer을 활용한 리스트 추가, 삭제, 수정 기능
 
 ```java
-// 몇 개의 API 사용 예제를 코드와 함께 보여주세요.
+//리듀서 등록
+const reducer = (todoList, action) => {
+  switch (action.type) {
+    case "CREATE":
+      return [action.data, ...todoList];
+    case "UPDATE":
+      return todoList.map((item) =>
+        item.id == action.data.id ? action.data : item
+      );
+    case "DELETE":
+      return todoList.filter((item) => item.id !== action.data.id);
+  }
+};
+.
+.
+//add
+  const onCreateHandler = () => {
+    if (input.length > 0) {
+      dispatch({
+        type: "CREATE",
+        data: {
+          id: idRef.current++,
+          content: input,
+        },
+      });
+    } else {
+      alert("입력폼에 적어주세요.");
+    }
+    setInput("");
+  };
+  //update
+  const onUpdateHandler = (id) => {
+    if (updateInput.length > 0) {
+      dispatch({
+        type: "UPDATE",
+        data: {
+          id,
+          content: updateInput,
+        },
+      });
+    }
+    setInput("");
+  };
+  //delete
+  const onDeleteHandler = (id) => {
+    dispatch({
+      type: "DELETE",
+      data: {
+        id,
+      },
+    });
+    setInput("");
+  };
 ```
 
 
 
 # [4] Contribution
-기여해주신 모든 분들께 대단히 감사드립니다.[`contributing guide`][contribution-url]를 참고해주세요.
-이 프로젝트의 기여하신 분들을 소개합니다! 🙆‍♀️
-*이모티콘 쓰는 것을 좋아한다면, 버그 수정에 🐞, 아이디어 제공에 💡, 새로운 기능 구현에 ✨를 사용할 수 있습니다.*
+버그 수정에 🐞, 아이디어 제공에 💡, 새로운 기능 구현에 ✨를 사용할 수 있습니다.*
 - 🐞 [dev-ujin](https://github.com/dev-ujin): 메인페이지 버그 수정
 
 
 
 # [5] Acknowledgement
-***유사한 프로젝트의 레포지토리** 혹은 **블로그 포스트** 등 프로젝트 구현에 영감을 준 출처에 대해 링크를 나열하세요.*
 
-- [Readme Template - Embedded Artistry](https://embeddedartistry.com/blog/2017/11/30/embedded-artistry-readme-template/)
-- [How to write a kickass Readme - James.Scott](https://dev.to/scottydocs/how-to-write-a-kickass-readme-5af9)
-- [Best-README-Template - othneildrew](https://github.com/othneildrew/Best-README-Template#prerequisites)
-- [Img Shields](https://shields.io/)
-- [Github Pages](https://pages.github.com/)
+- design https://www.behance.net/gallery/197368319/Salesforce-CRM-AI-Scheduler-UX-UI-Design?tracking_source=search_projects&l=5
 
 
 
