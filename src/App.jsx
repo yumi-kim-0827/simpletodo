@@ -27,13 +27,17 @@ function App() {
   const idRef = useRef(1);
   //add
   const onCreateHandler = () => {
-    dispatch({
-      type: "CREATE",
-      data: {
-        id: idRef.current++,
-        content: input,
-      },
-    });
+    if (input.length > 0) {
+      dispatch({
+        type: "CREATE",
+        data: {
+          id: idRef.current++,
+          content: input,
+        },
+      });
+    } else {
+      alert("입력폼에 적어주세요.");
+    }
     setInput("");
   };
   //update
