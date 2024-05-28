@@ -36,7 +36,8 @@ https://yumi-kim-0827.github.io/simpletodo/
 ## Features
 
 - pwa 환경 설정으로 모바일에서 웹앱 다운로드 설치 가능
-  
+  ![todolist_react_download](https://github.com/yumi-kim-0827/simpletodo/assets/116349476/2e30af5d-d151-4a3c-b609-16cd889e0cda)
+
 
 ## Technologies
 - React js
