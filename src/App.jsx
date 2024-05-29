@@ -1,6 +1,10 @@
 import { useState, useReducer, useRef } from "react";
 import "./App.scss";
 import Button from "./components/Button";
+import "regenerator-runtime/runtime";
+import SpeechRecognition, {
+  useSpeechRecognition,
+} from "react-speech-recognition";
 
 //리듀서 등록
 const reducer = (todoList, action) => {
@@ -24,6 +28,18 @@ function App() {
   const [updateInput, setUpdateInput] = useState("");
   const [updateId, setUpdateId] = useState(null);
   const [updateVisible, setUpdateVisible] = useState(false);
+  const [speechVisible, setSpeectVisible] = useState(false); //음성인식 폼
+  const {
+    transcript,
+    listening,
+    resetTranscript,
+    browserSupportsSpeechRecognition,
+  } = useSpeechRecognition();
+
+  if (!browserSupportsSpeechRecognition) {
+    return null;
+  }
+
   const idRef = useRef(1);
   //add
   const onCreateHandler = () => {
@@ -33,6 +49,14 @@ function App() {
         data: {
           id: idRef.current++,
           content: input,
+        },
+      });
+    } else if (speechVisible) {
+      dispatch({
+        type: "CREATE",
+        data: {
+          id: idRef.current++,
+          content: transcript,
         },
       });
     } else {
@@ -122,24 +146,87 @@ function App() {
           </div>
         </div>
         <div className="todo_body">
-          <div className="todo_input">
-            <input
-              type="text"
-              value={input}
-              placeholder="하고싶은 일을 적어주세요."
-              onChange={(e) => {
-                setInput(e.target.value);
-              }}
-              onKeyDown={(e) => {
-                if (e.key === "Enter") {
-                  onCreateHandler();
-                }
+          <div className="todo_version">
+            <Button
+              text={"텍스트로 입력"}
+              type={"btntype3"}
+              onClick={() => {
+                setSpeectVisible(false);
               }}
             />
-            <Button text={"추가"} type={"btntype3"} onClick={onCreateHandler} />
+            <Button
+              text={"음성으로 입력"}
+              type={"btntype3"}
+              onClick={() => {
+                setSpeectVisible(true);
+              }}
+            />
+          </div>
+          <div className="todo_input">
+            {speechVisible ? (
+              <>
+                <input
+                  type="text"
+                  value={transcript}
+                  placeholder="인식시작을 누른 후 추가해주세요"
+                  onChange={() => {
+                    setInput(transcript);
+                  }}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter") {
+                      onCreateHandler();
+                    }
+                  }}
+                  disabled
+                />
+                <div className="speechBtns">
+                  <Button
+                    text={"인식시작"}
+                    type={"btntype3"}
+                    onClick={SpeechRecognition.startListening}
+                  />
+                  <Button
+                    text={"인식중단"}
+                    type={"btntype3"}
+                    onClick={SpeechRecognition.stopListening}
+                  />
+                  <Button
+                    text={"리셋"}
+                    type={"btntype3"}
+                    onClick={resetTranscript}
+                  />
+                  <Button
+                    text={"추가"}
+                    type={"btntype3"}
+                    onClick={onCreateHandler}
+                  />
+                </div>
+              </>
+            ) : (
+              <>
+                <input
+                  type="text"
+                  value={input}
+                  placeholder="하고싶은 일을 적어주세요."
+                  onChange={(e) => {
+                    setInput(e.target.value);
+                  }}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter") {
+                      onCreateHandler();
+                    }
+                  }}
+                />
+                <Button
+                  text={"추가"}
+                  type={"btntype3"}
+                  onClick={onCreateHandler}
+                />
+              </>
+            )}
           </div>
           <div className="todo_list">
-            <h3>오늘 내가 하고싶은 일</h3>
+            <h3>오늘 내가 하고싶은 일{input}</h3>
             {todoList.map((item) => {
               return (
                 <div className="todo_item" key={item.id}>
