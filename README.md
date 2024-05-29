@@ -1,18 +1,20 @@
 # 💡Simple todo pwa
 
 오늘 할 일, 하고싶은 일을 추가, 수정, 삭제할 수있는 간단한 투두리스트 웹앱입니다.
+텍스트 입력과 음성인식이 가능합니다.
 
 # 🖥️View web site
 
 https://yumi-kim-0827.github.io/simpletodo/
 
-
 <!--프로젝트 대문 이미지-->
-![screen1](https://github.com/yumi-kim-0827/simpletodo/assets/116349476/b741156e-cf27-492e-af50-4a98a950ee3b)
 
+![스크린샷 2024-05-29 172517](https://github.com/yumi-kim-0827/simpletodo/assets/116349476/4a354f3a-5851-4879-89cd-6e297135ca4d)
 
 <!--목차-->
+
 # Table of Contents
+
 - [[1] About the Project](#1-about-the-project)
   - [Features](#features)
   - [Technologies](#technologies)
@@ -26,42 +28,45 @@ https://yumi-kim-0827.github.io/simpletodo/
 - [[6] Contact](#6-contact)
 - [[7] License](#7-license)
 
-
-
 # [1] About the Project
+
 오늘 할 일, 하고싶은 일을 추가, 수정, 삭제할 수있는 투두리스트 웹앱입니다.
 다크모드의 모던한 투두리스트 웹앱으로 모바일 등 다양한 디바이스 반응형으로 제작되었습니다.
-
 
 ## Features
 
 - pwa 환경 설정으로 모바일에서 웹앱 다운로드 설치 가능
   ![todolist_react_download](https://github.com/yumi-kim-0827/simpletodo/assets/116349476/2e30af5d-d151-4a3c-b609-16cd889e0cda)
 
-
 ## Technologies
+
 - React js
 - scss
 - javascript
 
-
 # [2] Getting Started
+
 ## Prerequisites
+
 - npm
+
 ```bash
 npm install npm@latest -g
 ```
 
 ## Installation
+
 1. Repository 클론
+
 ```bash
 git clone https://github.com/your-username/project-repository
 ```
+
 2. NPM packages 설치
+
 ```bash
 npm install
 ```
-
 
 # [3] Usage
 
@@ -123,37 +128,33 @@ const reducer = (todoList, action) => {
   };
 ```
 
-
-
 # [4] Contribution
-버그 수정에 🐞, 아이디어 제공에 💡, 새로운 기능 구현에 ✨를 사용할 수 있습니다.*
+
+버그 수정에 🐞, 아이디어 제공에 💡, 새로운 기능 구현에 ✨를 사용할 수 있습니다.\*
+
 - (예시) 🐞 [YUMEEKIM](https://github.com/yumi-kim-0827): 메인페이지 버그 수정
-
-
 
 # [5] Acknowledgement
 
 - design https://www.behance.net/gallery/197368319/Salesforce-CRM-AI-Scheduler-UX-UI-Design?tracking_source=search_projects&l=5
 
-
-
 # [6] Contact
+
 - 📧 yumee0827@naver.com
 - 📋 [https://github.com/yumi-kim-0827](https://github.com/yumi-kim-0827)
 
-
-
 # [7] License
+
 MIT 라이센스
 
-
-
 <!--Url for Badges-->
+
 [license-shield]: https://img.shields.io/github/license/dev-ujin/readme-template?labelColor=D8D8D8&color=04B4AE
 [repository-size-shield]: https://img.shields.io/github/repo-size/dev-ujin/readme-template?labelColor=D8D8D8&color=BE81F7
 [issue-closed-shield]: https://img.shields.io/github/issues-closed/dev-ujin/readme-template?labelColor=D8D8D8&color=FE9A2E
 
 <!--Url for Buttons-->
+
 [readme-eng-shield]: https://img.shields.io/badge/-readme%20in%20english-2E2E2E?style=for-the-badge
 [view-demo-shield]: https://img.shields.io/badge/-%F0%9F%98%8E%20view%20demo-F3F781?style=for-the-badge
 [view-demo-url]: https://dev-ujin.github.io
@@ -163,9 +164,7 @@ MIT 라이센스
 [request-feature-url]: https://github.com/dev-ujin/readme-template/issues
 
 <!--URLS-->
+
 [license-url]: LICENSE.md
 [contribution-url]: CONTRIBUTION.md
 [readme-eng-url]: ../README.md
-
-
-
