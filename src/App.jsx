@@ -226,7 +226,7 @@ function App() {
             )}
           </div>
           <div className="todo_list">
-            <h3>오늘 내가 하고싶은 일{input}</h3>
+            <h3>오늘 내가 하고싶은 일</h3>
             {todoList.map((item) => {
               return (
                 <div className="todo_item" key={item.id}>
