@@ -1,11 +1,11 @@
 # 💡Simple todo pwa
 
-오늘 할 일, 하고싶은 일을 추가, 수정, 삭제할 수있는 간단한 투두리스트 웹앱입니다.
+본 프로젝트는 오늘 할 일, 하고싶은 일을 추가, 수정, 삭제할 수있는 간단한 투두리스트 웹앱입니다.
 텍스트 입력과 음성인식이 가능합니다.
 
 # 🖥️View web site
 
-https://yumi-kim-0827.github.io/simpletodo/
+Project View : [here](https://yumi-kim-0827.github.io/simpletodo/)
 
 <!--프로젝트 대문 이미지-->
 
@@ -59,7 +59,7 @@ npm install npm@latest -g
 1. Repository 클론
 
 ```bash
-git clone https://github.com/your-username/project-repository
+git clone https://github.com/yumi-kim-0827/simpletodo.git
 ```
 
 2. NPM packages 설치
