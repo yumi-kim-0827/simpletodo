@@ -3,7 +3,7 @@
 본 프로젝트는 오늘 할 일, 하고싶은 일을 추가, 수정, 삭제할 수있는 간단한 투두리스트 웹앱입니다.
 텍스트 입력과 음성인식이 가능합니다.
 
-# 🖥️View web site
+## 🖥️ View web site
 
 Project View : [here](https://yumi-kim-0827.github.io/simpletodo/)
 
@@ -11,24 +11,7 @@ Project View : [here](https://yumi-kim-0827.github.io/simpletodo/)
 
 ![스크린샷 2024-05-29 172517](https://github.com/yumi-kim-0827/simpletodo/assets/116349476/4a354f3a-5851-4879-89cd-6e297135ca4d)
 
-<!--목차-->
-
-# Table of Contents
-
-- [[1] About the Project](#1-about-the-project)
-  - [Features](#features)
-  - [Technologies](#technologies)
-- [[2] Getting Started](#2-getting-started)
-  - [Prerequisites](#prerequisites)
-  - [Installation](#installation)
-  - [Configuration](#configuration)
-- [[3] Usage](#3-usage)
-- [[4] Contribution](#4-contribution)
-- [[5] Acknowledgement](#5-acknowledgement)
-- [[6] Contact](#6-contact)
-- [[7] License](#7-license)
-
-# [1] About the Project
+## About the Project
 
 오늘 할 일, 하고싶은 일을 추가, 수정, 삭제할 수있는 투두리스트 웹앱입니다.
 다크모드의 모던한 투두리스트 웹앱으로 모바일 등 다양한 디바이스 반응형으로 제작되었습니다.
@@ -44,31 +27,7 @@ Project View : [here](https://yumi-kim-0827.github.io/simpletodo/)
 - scss
 - javascript
 
-# [2] Getting Started
-
-## Prerequisites
-
-- npm
-
-```bash
-npm install npm@latest -g
-```
-
-## Installation
-
-1. Repository 클론
-
-```bash
-git clone https://github.com/yumi-kim-0827/simpletodo.git
-```
-
-2. NPM packages 설치
-
-```bash
-npm install
-```
-
-# [3] Usage
+## Usage
 
 useReducer을 활용한 리스트 추가, 삭제, 수정 기능
 
@@ -128,24 +87,24 @@ const reducer = (todoList, action) => {
   };
 ```
 
-# [4] Contribution
+## Contribution
 
 버그 수정에 🐞, 아이디어 제공에 💡, 새로운 기능 구현에 ✨를 사용할 수 있습니다.\*
 
 - (예시) 🐞 [YUMEEKIM](https://github.com/yumi-kim-0827): 메인페이지 버그 수정
 
-# [5] Acknowledgement
+## Reference
 
-- design https://www.behance.net/gallery/197368319/Salesforce-CRM-AI-Scheduler-UX-UI-Design?tracking_source=search_projects&l=5
+- [https://info.childcare.go.kr/info/main.jsp](https://www.behance.net/gallery/197368319/Salesforce-CRM-AI-Scheduler-UX-UI-Design?tracking_source=search_projects&l=5)
 
-# [6] Contact
+## Contact
 
 - 📧 yumee0827@naver.com
 - 📋 [https://github.com/yumi-kim-0827](https://github.com/yumi-kim-0827)
 
-# [7] License
-
+## License
 MIT 라이센스
+© 2024 YUMEE KIM. Published with GitHub Pages
 
 <!--Url for Badges-->
 
